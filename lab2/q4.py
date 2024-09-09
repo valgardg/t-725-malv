@@ -27,3 +27,10 @@ subjectivity_test = obj_examples[4500:] + subj_examples[4500:]
 
 print('training length:', len(subjectivity_training))
 print('test length:', len(subjectivity_test))
+
+# question 4 - naive bayes classifier
+
+subjectivity_classifier = nltk.NaiveBayesClassifier.train(subjectivity_training)
+print("Accuracy:", nltk.classify.accuracy(subjectivity_classifier, subjectivity_test))
+
+subjectivity_classifier.show_most_informative_features(20)
