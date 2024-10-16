@@ -40,9 +40,7 @@ def main():
     # types with no stopwords
     types_no_stopwords = len(set([t for t in tokens if t not in stopwords.words("english")]))
     # 10 most common
-    file_fdist = FreqDist()
-    for token in tokens:
-        file_fdist[token] += 1
+    file_fdist = FreqDist(token for token in tokens)
     # long types
     long_types = list(set([token for token in tokens if len(token) > 13 and '-' not in token]))
     long_types_sorted = sorted(long_types, key=len, reverse=True)
@@ -51,7 +49,7 @@ def main():
     nouns_with_ation = [word for word, pos in tagged_tokens if pos.startswith('NN') and word.endswith('ation')]
 
     # display analysis
-    display_analysis(filename, token_no, token_types, types_no_stopwords, file_fdist.most_common(10), long_types[:4], nouns_with_ation[:10])
+    display_analysis(filename, token_no, token_types, types_no_stopwords, file_fdist.most_common(10), long_types_sorted[:4], nouns_with_ation[:10])
 
 if __name__ == "__main__":
     main()
