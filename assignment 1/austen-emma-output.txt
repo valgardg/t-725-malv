@@ -1,0 +1,9 @@
+Conducting analysis on file austen-emma.txt
+
+Text: austen-emma.txt
+Tokens: 192427
+Types: 7811
+Types excluding stop words: 7682
+10 most common tokens: [(',', 11454), ('.', 6928), ('to', 5183), ('the', 4844), ('and', 4672), ('of', 4279), ('I', 3178), ('a', 3004), ('was', 2385), ('her', 2381)]
+Long types: ['disinclination', 'discouragement', 'mortifications', 'unexceptionable']
+Nouns ending in 'ation': ['situation', 'conversation', 'education', 'mortification', 'reconciliation', 'situation', 'occupation', 'determination', 'congratulation', 'separation']

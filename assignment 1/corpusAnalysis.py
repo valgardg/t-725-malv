@@ -4,9 +4,9 @@ from nltk.corpus import gutenberg
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.probability import FreqDist
-nltk.download('averaged_perceptron_tagger_eng')
-nltk.download('gutenberg')
-nltk.download('stopwords')
+nltk.download('averaged_perceptron_tagger_eng', quiet=True)
+nltk.download('gutenberg', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 def check_args():
     if len(sys.argv) < 2:
@@ -31,9 +31,8 @@ def main():
     if check_args():
         return
     filename = sys.argv[1]
-    print(f'Conducting corpus analysis on file {filename}')
-    file_raw = gutenberg.raw(filename)
-    tokens = word_tokenize(file_raw)
+    print(f'Conducting analysis on file {filename}')
+    tokens = gutenberg.words(filename)
     # number of tokens
     token_no = len(tokens)
     # token types
